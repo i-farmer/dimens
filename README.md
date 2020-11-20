@@ -6,8 +6,21 @@
 ```
 ## 使用方式
 ```
-1.布局之中 @dimen/x30
-2.代码之中 R.dimen.x30
+1. add it in your root build.gradle at the end of repositories:
+    allprojects {
+	repositories {
+	    ...
+	    maven { url 'https://www.jitpack.io' }
+	}
+    }
+2. add the dependency
+    dependencies {
+	implementation 'com.github.i-farmer:dimens:1.0.0'
+    }
+3. to use
+    a.布局之中 @dimen/x30
+    b.代码之中 R.dimen.x30
+    
 ```
 ## 缺点
 ```
