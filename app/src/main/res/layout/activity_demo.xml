@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginBottom="10dp"
+        android:background="#D6D7DC" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x30"
+        android:layout_marginVertical="@dimen/x16"
+        android:text="描述"
+        android:textColor="#1A1A1A"
+        android:textSize="@dimen/x32" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x30"
+        android:text="把宽度平分750份，把每份当作一个像素，为了使视图不变形，宽度也使用x值；另外字体大小，也请用x值"
+        android:textColor="#4A4A4A"
+        android:textSize="@dimen/x28" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x30"
+        android:layout_marginVertical="@dimen/x16"
+        android:text="使用方式"
+        android:textColor="#1A1A1A"
+        android:textSize="@dimen/x32" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x30"
+        android:text="1.布局之中 @dimen/x30"
+        android:textColor="#4A4A4A"
+        android:textSize="@dimen/x28" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x30"
+        android:layout_marginTop="@dimen/x6"
+        android:text="2.代码之中 R.dimen.x30"
+        android:textColor="#4A4A4A"
+        android:textSize="@dimen/x28" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x30"
+        android:layout_marginVertical="@dimen/x16"
+        android:text="缺点"
+        android:textColor="#1A1A1A"
+        android:textSize="@dimen/x32" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/x30"
+        android:layout_marginTop="@dimen/x6"
+        android:text="不支持负数值，也不支持x750以上的值"
+        android:textColor="#4A4A4A"
+        android:textSize="@dimen/x28" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginTop="10dp"
+        android:background="#D6D7DC" />
+</LinearLayout>
