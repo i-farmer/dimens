@@ -1,6 +1,7 @@
 package i.farmer.demo.dimens;
 
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,5 +16,13 @@ public class DemoActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_demo);
+    }
+
+
+    private float getSw() {
+        DisplayMetrics dm = new DisplayMetrics();
+        this.getWindowManager().getDefaultDisplay().getMetrics(dm);
+        float sw = dm.widthPixels / dm.density;
+        return sw;
     }
 }
