@@ -2,6 +2,10 @@ package com.example.dimengenerate;
 
 import org.junit.Test;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
 import java.text.DecimalFormat;
 
 /**
@@ -10,6 +14,7 @@ import java.text.DecimalFormat;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 public class ExampleUnitTest {
+    private final String DIR = "/Users/one/Android/workspace/ifarmer/dimens/library/src/main/res/";
     private final int[] target = {
             240,
             320,
@@ -20,7 +25,9 @@ public class ExampleUnitTest {
             400,
             410,
             411,
+            423,
             432,
+            450,
             480,
             530,
             533,
@@ -42,11 +49,43 @@ public class ExampleUnitTest {
 
     @Test
     public void createDimen() {
-        final double target = 768.d;
-        create(target);
+        File root = new File(DIR);
+        if (!root.exists()) {
+            return;
+        }
+        for (int sw : target) {
+            Writer out = null;
+            try {
+                File dir = new File(DIR + "values-sw" + sw + "dp");
+                if (!dir.exists()) {
+                    // 先创建目录
+                    dir.mkdir();
+                }
+                File f = new File(dir.getAbsolutePath() + File.separator + "dimens.xml");
+                if (f.exists()) {
+                    // 如果已经存在，不重新创建
+                    continue;
+                }
+                f.createNewFile();
+                out = new FileWriter(f);
+                String content = create(sw);
+                out.write(content);
+            } catch (IOException exception) {
+
+            } finally {
+                try {
+                    if (null != out) {
+                        out.close();
+                        out = null;
+                    }
+                } catch (IOException exception) {
+                    exception.printStackTrace();
+                }
+            }
+        }
     }
 
-    private void create(double width) {
+    private String create(double width) {
         StringBuffer buffer = new StringBuffer();
         buffer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
         buffer.append("<resources>");
@@ -61,6 +100,6 @@ public class ExampleUnitTest {
             buffer.append(" <dimen name=\"m" + i + "\">-" + df.format(a) + "dp</dimen>");
         }
         buffer.append("</resources>");
-        String result = buffer.toString();
+        return buffer.toString();
     }
 }
