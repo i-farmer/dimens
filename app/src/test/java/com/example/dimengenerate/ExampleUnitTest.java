@@ -18,8 +18,10 @@ public class ExampleUnitTest {
     private final int[] target = {
             240,
             320,
+            352,
             360,
             362,
+            374,
             384,
             392,
             400,
@@ -88,7 +90,7 @@ public class ExampleUnitTest {
     private String create(double width) {
         StringBuffer buffer = new StringBuffer();
         buffer.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-        buffer.append("<resources>");
+        buffer.append("<resources xmlns:tools=\"http://schemas.android.com/tools\" tools:ignore=\"MissingDefaultResource\">");
         for (int i = 1; i <= 750; i++) {
             double a = width / 750 * i;
             DecimalFormat df = new DecimalFormat("#0.0000");

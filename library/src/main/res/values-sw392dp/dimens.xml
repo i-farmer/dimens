@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingDefaultResource">
     <dimen name="x1">0.5227dp</dimen>
     <dimen name="x2">1.0453dp</dimen>
     <dimen name="x3">1.5680dp</dimen>
